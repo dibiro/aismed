@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 from django.views.generic import TemplateView
+from django.template import RequestContext
 import json
 from django.shortcuts import HttpResponse, render_to_response
 from .models import Centros, CentrosPorServicios, CentrosPorHorarios, Telefonos, Servicios, Horarios

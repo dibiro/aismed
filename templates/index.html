@@ -1,0 +1,120 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+  <title>Aismed - Descargar</title>
+
+  <!-- CSS  -->
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="purple" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Aismed</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Version Web</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center purple-text ">Aismed</h1>
+        <div class="row center">
+          <h5 class="header col s12 light purple-text ">Una Moderna Herramienta Para La Ubicacion De Los Centros Asistenciarios En San Juan De Los Morros Estado Guarico</h5>
+        </div>
+        <div class="row center">
+          <a href="{% static 'aismed.apk' %}" id="download-button" class="btn-large waves-effect waves-light purple">Descargar Apk</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'background1.png' %}" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h5 class="center purple-text ">Interfaz Amigable</h5>
+
+            <p class="light purple-text ">Nuestro equipo trabaja arduamente para que la herramienta se lo mas amigable al usuario posible, siguendo las corientes de diseño de material design facilitando asi la aceptacion del usuario con la herramienta</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h5 class="center purple-text ">Es Totalmente Gratis!!</h5>
+
+            <p class="light purple-text ">
+              La herramienta fue pensada para el publico en general o turista que ne cesiten atencion media y no posen informacion de como llegar, pensando en ello la herramienta no posee ningun costo, ni molestos anuncio publicitarios
+            </p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h5 class="center purple-text ">Ahorre tiempo vital</h5>
+
+            <p class="light purple-text ">La herraminta tambien posee una seccion de servicios de cada institucion a la vez que refleja si estan activos o no, esta informacion se actualiza periodicamente para asi evitar viajes innecesarios a la hora de una emergencia</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot center">
+      <div class="container">
+        <div class="row">
+          <h5 class="header col s12 purple-text">Posee una amplia lista de instituciones</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'background2.png' %}" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h4 class="purple-text ">Realizado Por</h4>
+          <p class="left-align light purple-text ">Ign: </p>
+          <p class="left-align light purple-text ">Ign: </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row left">
+          <h5 class="header col s12 light purple-text">La seccion de servicios se actualiza periodicamente</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="{% static 'background3.png' %}" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <!--  Scripts-->
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+
+  </body>
+</html>
