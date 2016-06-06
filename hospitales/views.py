@@ -125,3 +125,65 @@ class Index(TemplateView):
 
     def get(self, request, *args, **kwargs):
         return render_to_response(self.template_name, locals(), context_instance=RequestContext(request))
+
+
+class IndexAplicacion(TemplateView):
+    template_name = "aplicacion/index.html"
+
+    def get(self, request, *args, **kwargs):
+        return render_to_response(self.template_name, locals(), context_instance=RequestContext(request))
+
+
+def centroslocal(request):
+    dicc = {}
+    dicc2 = {}
+    lista = []
+    lista2 = []
+    centros = Centros.objects.all()
+    for x in centros:
+        dicc = {
+            'id': x.id,
+            'name': x.nombre,
+            'direccion': x.direccion,
+            'latitud': x.latitud,
+            'longitud': x.longitud,
+            'fax': x.fax,
+            'email': x.email
+        }
+        servicios = CentrosPorServicios.objects.filter(centro=x)
+        for y in servicios:
+            dicc2 = {
+                'name': y.servicio.nombre,
+                'descripcion': y.descripcion
+            }
+            if y.estado:
+                dicc2['clase'] = 'green'
+            else:
+                dicc2['clase'] = 'red'
+            lista2.append(dicc2)
+            dicc2 = {}
+        dicc['servicio'] = lista2
+        lista2 = []
+        horarios = CentrosPorHorarios.objects.filter(centro=x)
+        for y in horarios:
+            dicc2 = {
+                'name': y.horario.nombre,
+                'horaint': y.horario.hora_de_entrada.strftime('%H:%M'),
+                'horafin': y.horario.hora_de_salida.strftime('%H:%M'),
+                'descripcion': y.descripcion
+            }
+            lista2.append(dicc2)
+            dicc2 = {}
+        dicc['horarios'] = lista2
+        lista2 = []
+        telefonos = Telefonos.objects.filter(centro=x)
+        for y in telefonos:
+            dicc['telefonos'] = ''
+            dicc['telefonos'] = dicc['telefonos'] + y.telefono + ', '
+        lista.append(dicc)
+        dicc = {}
+    result = json.dumps(lista, ensure_ascii=False)
+    return HttpResponse(
+        result,
+        content_type='application/json; charset=utf-8'
+    )

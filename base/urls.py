@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from hospitales.views import centros, reguistrar_centros, Index
+from hospitales.views import centros, reguistrar_centros, Index, IndexAplicacion, centroslocal
 
 
 urlpatterns = [
-    url(r'^$', Index.as_view()),
-    url(r'^admin/', admin.site.urls),
+    url(r'^$', Index.as_view(), name='inicio'),
+    url(r'^administrador/', admin.site.urls, name='administrador'),
+    url(r'^aplicacion/', IndexAplicacion.as_view(), name='aplicacion'),
     url(r'^centros/$', centros, name='centros'),
+    url(r'^centroslocal/$', centroslocal, name='centroslocal'),
     #url(r'^reguistrar_centros/$', reguistrar_centros, name='reguistrar_centros'),
 ]
