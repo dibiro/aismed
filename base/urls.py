@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^aplicacion/', IndexAplicacion.as_view(), name='aplicacion'),
     url(r'^centros/$', centros, name='centros'),
     url(r'^centroslocal/$', centroslocal, name='centroslocal'),
-    #url(r'^reguistrar_centros/$', reguistrar_centros, name='reguistrar_centros'),
+    url(r'^reguistrar_centros/$', reguistrar_centros, name='reguistrar_centros'),
 ]

@@ -12,7 +12,7 @@ hospitales.controller('listado', function($scope, $http) {
       $scope.borrar = false;
     }
   }, 100);
-  if (typeof(localStorage["DATOS"])===undefined) {
+  if (typeof(localStorage["DATOS"])=="undefined") {
     $scope.datos = [];
     localStorage["DATOS"] = "[]";
   }else {
